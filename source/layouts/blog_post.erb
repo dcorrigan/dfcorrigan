@@ -1,0 +1,62 @@
+<% wrap_layout :layout do %>
+<div class="blog container">
+  <div class="row">
+    <div class="four columns">
+      <nav class="posts">
+        <h2>Recent Posts</h2>
+        <ul>
+          <% blog.articles[0..5].each do |post| %>
+            <li>
+              <% link_to(post.url) do %>
+                <span><%= format_date(post) %></span> 
+                <%= post.title %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+    <div class="eight columns">
+      <article class="post">
+        <header>
+          <h1><%= partial("layouts/ornaments/doodad") %> <%= current_resource.title %></h1>
+          <p class="byline"><%= formatted_date %></p>
+        </header>
+        <%= yield %>
+        <hr>
+        <footer>
+          <div class="page-navigation">
+            <% if current_article.previous_article %>
+              <%= link_to("&laquo; #{current_article.previous_article.title}", current_article.previous_article.url, {class: 'prev'}) %>
+            <% end %>
+            <% if current_article.next_article %>
+              <%= link_to("#{current_article.next_article.title} &raquo;", current_article.next_article.url, {class: 'next'}) %>
+            <% end %>
+            <hr>
+          </div>
+          <div class="sharing">
+            <p><strong class="button no-border">Share:</strong></p>
+            <a href="https://twitter.com/intent/tweet?text=<%= current_article.title %>&url=http://dfcorrigan.com<%= current_article.url %>" 
+              class="button"
+              rel="nofollow" 
+              title="Click to share on Twitter"
+              target="_blank">Twitter</a>
+            <a href="https://www.tumblr.com/share"
+              class="button"
+              rel="nofollow" 
+              data-posttype="text"
+              data-title="<%= current_article.title %>"
+              title="Click to share on Tumblr"
+              target="_blank">Tumblr</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://dfcorrigan.com<%= current_article.url %>" 
+              class="button"
+              rel="nofollow" 
+              title="Click to share on Facebook"
+              target="_blank">Facebook</a>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
+</div>
+<% end %>

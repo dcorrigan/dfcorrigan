@@ -1,0 +1,96 @@
+---
+- title: 'Works on Paper'
+  works:
+    - num: 65 
+      title: Burnt Alphabet (after Johns)
+      description: Paper, flame retardant, butane.
+      dims: '28 x 40 inches'
+      detail: 67
+    - num: 70
+      title: Remainder
+      description: Paper, aluminum powder, copper sulfate and sodium chloride solution, 
+      dims: '28 x 40 inches'
+      detail: 75
+    - num: 80
+      title: Library Cards
+      description: Mixed media on library cards.
+      dims: '3 x 5 inches each'
+    - num: 85
+      title: Veins and Arteries of the Neck
+      description: Lithograph printed on a book page.
+      dims: '5 x 9 inches'
+    - num: 87
+      title: Skeleton
+      description: Photo-lithograph printed on collaged book pages.
+      dims: '7 x 11 inches'
+    - num: 90
+      title: Untitled
+      description: Saline sulfate etching.
+      dims: '18 x 32 inches'
+    - num: 95
+      title: Borges
+      description: Woodcut with letterpress.
+      dims: '10 x 12 inches'
+    - num: 100
+      title: Don Q
+      description: Watercolor on translucent acrylic sheet.
+      dims: '3 x 5 inches'
+    - num: 105
+      title: Don Q (in the moment of of his Apotheosis)
+      description: Woodcut printed on handmade paper.
+      dims: '8 x 11 inches'
+    - num: 110
+      title: Ruin
+      description: Ink, watercolor on paper. Text from Anglo-Saxon poem "The Ruin."
+      dims: '18 x 32 inches'
+    - num: 115
+      title: Fight
+      description: Woodcut.
+      dims: '10 x 9 inches'
+    - num: 120
+      title: Dear Thomas Ingmire
+      description: Ink on graph paper with enclosure box.
+      dims: '10 x 4 x 3 inches'
+    - num: 125
+      title: Hanrahan laments because of his Wanderings
+      description: Ink on watercolor paper. Text from poem of the same name by W.B. Yeats.
+      dims: '8 x 8 inches'
+    - num: 130
+      title: Journey
+      description: Ink on watercolor paper. Text from poem of the same name by Kay Peters.
+      dims: '8 x 11 inches'
+- title: Books
+  works:
+    - num: 20
+      title: Etched
+      description: Hand-bound aluminum plates etched with saline sulfate.
+      dims: '5 x 8 inches'
+    - num: 25
+      title: Burnt
+      description: Hand-bound paper volumes set on fire.
+      dims: '3 x 5 inch volumes'
+    - num: 30
+      title: Burnt Stripe and Dirt Stripe
+      description: Hand-bound volumes burnt striped with fire and dirt, respectively.
+      dims: '6 x 9 inch volumes'
+    - num: 35
+      title: Clay-dipped
+      description: Hand-bound volume dipped in porcelain slip, never fired.
+      dims: '20 x 12 x 15 inches'
+    - num: 40
+      title: Boiled
+      description: Hand-bound volumes kept as a journal for several months and then boiled in ink.
+      dims: '1.5 x 2.25 inch volumes'
+      detail: 45
+    - num: 50
+      title: Cemented 
+      description: Hand-bound volume with cement poured over it.
+      dims: '20 x 12 x 13 inch volumes'
+    - num: 55
+      title: Typewritten
+      description: ... on a spool in a wooden enclosure.
+      dims: '8 x 3.5 x 3.5 inches'
+    - num: 60
+      title: Typewriter Monster
+      description: Ink and handmade paper
+      dims: '4 x 4 x 4 inches'

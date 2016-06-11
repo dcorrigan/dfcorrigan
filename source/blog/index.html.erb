@@ -1,0 +1,45 @@
+---
+pageable: true
+---
+
+<div class="blog container">
+  <div class="row">
+    <div class="two columns">
+      &#xa0;
+    </div>
+    <div class="eight columns">
+      <section class="blog-list">
+        <% page_articles.each do |article| %>
+          <article class="post post-list">
+            <p class="byline-list"> <small> <%= format_date(article) %> </small> </p>
+            <h1>
+              <% link_to(article.url) do %>
+                <%= partial("layouts/ornaments/doodad") %>
+                <%= article.title %>
+              <% end %>
+            </h1>
+            <%= article.summary(config.summary_length) %>
+            <% unless config.summary_length >= article.body.length %>
+              <p class="blog-continue"><small><%= link_to('Keep reading.', article.url) %></small></p>
+            <% end %>
+          </article>
+          <% if article != page_articles.last || prev_page || next_page %>
+            <hr>
+          <% end %>
+        <% end %>
+        <div class="page-navigation">
+          <% if prev_page %>
+            <%= link_to("&laquo; Newer", prev_page.url, {class: 'prev'}) %>
+          <% end %>
+          <% if next_page %>
+            <%= link_to("Older &raquo;", next_page.url, {class: 'next'}) %>
+          <% end %>
+          <% if prev_page || next_page %>
+            <hr>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
