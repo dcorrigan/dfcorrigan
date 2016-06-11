@@ -18,15 +18,32 @@ figcaption {
 }
 
 header.main {
-  width: 100%;
+  width: 25%;
   margin-left: 2rem;
   margin-right: 2rem;
   margin-top: 2rem;
   height: 7rem;
 }
 
-header.main nav li, header.main nav, header.main h1, header.main svg {
-  display: block;
+header.main nav {
+  text-align: right;
+  float: left;
+  margin-left: 4rem;
+  margin-top: 5rem;
+}
+
+header.main nav li {
+  font-size: 2.0rem;
+  list-style: none;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.header-name {
+  position: absolute;
+}
+
+header.main h1, header.main svg {
   float: left;
   margin-left: 2rem;
 }
@@ -39,17 +56,6 @@ header.main svg {
 
 header.main h1 {
   font-size: 3.0rem;
-}
-
-header.main nav {
-  border-bottom: 1px solid #b8b8b8;
-  padding-right: 2rem;
-  height: 4rem;
-}
-
-header.main nav li {
-  text-align: center;
-  font-size: 2.0rem;
 }
 
 .letter-banner img {
