@@ -27,8 +27,12 @@
 
   </head>
   <body>
-    <%= partial("layouts/partials/header") %>
-    <%= yield %>
+    <div class="main container">
+      <div class="three columns">
+        <%= partial("layouts/partials/header") %>
+      </div>
+      <%= yield %>
+    </div>
     <%= partial("layouts/partials/footer") %>
   </body>
 </html>

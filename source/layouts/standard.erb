@@ -1,0 +1,12 @@
+<% wrap_layout :layout do %>
+  <div class="center-col six columns">
+    <%= yield %>
+  </div>
+  <div class="three columns">
+    <% if content_for?(:third_col) %>
+      <%= yield_content(:third_col) %>
+    <% else %>
+      &#xa0;
+    <% end %>
+  </div>
+<% end %>

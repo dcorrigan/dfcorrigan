@@ -1,50 +1,5 @@
-<main>
-  <% categories.each_with_index do |category_info, ind| %>
-  <div class="art-divider container">
-    <div class="row art-head-row">
-      <div class="rule-col left-col four columns">
-        <div class="rule">
-          <hr/>
-        </div>
-      </div>
-      <div class="art-main four columns">
-        <div class="art-head">
-          <div class="svg-pointer svg-pointer-left">
-            <%= erb(:"ornaments/curly_pointer") %>
-          </div>
-          <h5><%= category_info[:title] %></h5>
-          <div class="svg-pointer svg-pointer-right">
-            <%= erb(:"ornaments/curly_pointer") %>
-          </div>
-        </div>
-      </div>
-      <div class="rule-col four columns">
-        <div class="rule">
-          <hr/>
-        </div>
-      </div>
-    </div>
+<% wrap_layout :layout do %>
+  <div class="center-col art nine columns">
+    <%= yield %>
   </div>
-  <ul class="og-grid" id="og-grid">
-    <% images.send(category_info[:list_method]).each do |img| %>
-    <li>
-      <a href="/" 
-        data-largesrc="images/art/<%= img.name %>" 
-        <% if img.detail %>data-detail="images/art/<%= img.detail %>"<% end %> 
-        data-title="<%= img.title %>" 
-        data-dims="<%= img.dims %>" 
-        data-description="<%= img.description %>">
-        <img src="images/art/thumbs/<%= img.thumb %>" />
-      </a>
-    </li>
-    <% end %>
-  </ul>
-  <% end %>
-</main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<%= javascript_tag 'app' %>
-<script>
-    $(function() {
-      Grid.init();
-    });
-</script>
+<% end %>
