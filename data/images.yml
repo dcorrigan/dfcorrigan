@@ -5,12 +5,14 @@
       title: Burnt Alphabet (after Johns)
       description: Paper, flame retardant, butane.
       dims: '28 x 40 inches'
-      detail: 67
+      details:
+        - 67
     - num: 70
       title: Remainder
       description: Paper, aluminum powder, copper sulfate and sodium chloride solution, 
       dims: '28 x 40 inches'
-      detail: 75
+      details: 
+        - 75
     - num: 80
       title: Library Cards
       description: Mixed media on library cards.
@@ -81,7 +83,8 @@
       title: Boiled
       description: Hand-bound volumes kept as a journal for several months and then boiled in ink.
       dims: '1.5 x 2.25 inch volumes'
-      detail: 45
+      details: 
+        - 45
     - num: 50
       title: Cemented 
       description: Hand-bound volume with cement poured over it.
