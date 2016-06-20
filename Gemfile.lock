@@ -142,6 +142,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fastimage
   image_optim
   image_optim_pack
   middleman (>= 4.0.0)

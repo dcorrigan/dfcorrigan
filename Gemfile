@@ -15,6 +15,7 @@ gem 'middleman-blog'
 gem 'middleman-minify-html'
 gem 'image_optim'
 gem 'image_optim_pack'
+gem 'fastimage'
 gem 'nokogiri'
 
 group :development do

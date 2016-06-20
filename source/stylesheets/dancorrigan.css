@@ -76,6 +76,60 @@ svg {
   fill: #b8b8b8;
 }
 
+/* css slideshow */
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.slider li {
+  top:0;
+    list-style: none;
+    position: absolute;
+}
+
+.slider img {
+    vertical-align: top;
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    background-color: white;
+    bottom: .5em;
+    cursor: pointer;
+    display: block;
+    height: .5em;
+    position: absolute;
+    width: .5em;
+    z-index: 10;
+}
+.slider li:nth-child(1) label {
+    left: .5em;
+}
+.slider li:nth-child(2) label {
+    left: 2em;
+}
+.slider li:nth-child(3) label {
+    left: 3.5em;
+}
+.slider li:nth-child(4) label {
+    left: 5em;
+}
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
 /* art heads */
 
 .center-col.art {
@@ -84,6 +138,7 @@ svg {
 
 .focus-img-cap p {
   text-align: left;
+  margin-top: 1em;
   margin-bottom: 0.2em;
 }
 
@@ -96,12 +151,7 @@ svg {
 }
 
 .focus-container {
-  text-align: center;
-}
-
-.focus-img {
-  margin: auto;
-  display: inline-block;
+  /* min-height: 80vh; */
   text-align: center;
 }
 
