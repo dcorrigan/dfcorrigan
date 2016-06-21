@@ -7,13 +7,20 @@
       <% if focus_img.details %>
         <li>
           <input type="radio" id="slide1" name="slide" checked>
-          <label for="slide1"></label>
+          <label for="slide1">
+            <span class="focus-label-num"> 1 </span>
+          </label>
           <img class="u-max-full-width" src="<%= path %>">
         </li>
         <% focus_img.details.each_with_index do |det, ind| %>
+          <% count = ind + 2 %>
           <li>
             <input type="radio" id="slide<%= ind + 2 %>" name="slide">
-            <label for="slide<%= ind + 2 %>"></label>
+            <label for="slide<%= count %>">
+              <span class="focus-label-num">
+                <%= count %>
+              </span>
+            </label>
             <img class="u-max-full-width" src="<%= art_image_for(det) %>">
           </li>
         <% end %>
