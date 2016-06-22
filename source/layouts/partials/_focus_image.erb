@@ -1,6 +1,36 @@
 <div class="focus-container">
   <figure class="focus-img">
-    <img class="u-max-full-width" src="<%= art_image_for(focus_img.num) %>">
+    <ul class="slider">
+      <% path = art_image_for(focus_img.num) %>
+      <% dims = image_dims(path) %>
+      <svg class="u-max-full-width" viewBox="0 0 <%= dims.width %> <%= dims.height %>" width="<%= dims.width %>"></svg>
+      <% if focus_img.details %>
+        <li>
+          <input type="radio" id="slide1" name="slide" checked>
+          <label for="slide1">
+            <span class="focus-label-num"> 1 </span>
+          </label>
+          <img class="u-max-full-width" src="<%= path %>">
+        </li>
+        <% focus_img.details.each_with_index do |det, ind| %>
+          <% count = ind + 2 %>
+          <li>
+            <input type="radio" id="slide<%= ind + 2 %>" name="slide">
+            <label for="slide<%= count %>">
+              <span class="focus-label-num">
+                <%= count %>
+              </span>
+            </label>
+            <img class="u-max-full-width" src="<%= art_image_for(det) %>">
+          </li>
+        <% end %>
+      <% else %>
+        <li>
+          <input type="radio" id="slide1" name="slide" checked>
+          <img class="u-max-full-width" src="<%= path %>">
+        </li>
+      <% end %>
+    </ul>
     <figcaption class="focus-img-cap">
     <p class="focus-title"><%= focus_img.title %></p>
     <p class="focus-dims"><%= focus_img.dims %></p>
