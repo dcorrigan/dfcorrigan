@@ -47,7 +47,7 @@ end
 ##
 # Ignores
 
-ignore 'stylesheets/components/'
+ignore 'stylesheets/components/*'
 
 # General configuration
 
