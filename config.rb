@@ -32,6 +32,9 @@ end
 
 activate :sprockets
 
+##
+# Blog
+
 activate :blog do |blog|
   blog.prefix = "blog"
   blog.layout = "blog_post"
@@ -40,6 +43,11 @@ activate :blog do |blog|
   blog.page_link = "p{num}"
   blog.per_page = 7
 end
+
+##
+# Ignores
+
+ignore 'stylesheets/components/'
 
 # General configuration
 

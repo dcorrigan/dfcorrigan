@@ -3,6 +3,33 @@ body {
   font-size: 18px;
 }
 
+/* art-grid */
+
+.og-grid {
+	list-style: none;
+	padding: 20px 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+.og-grid li {
+	display: inline-block;
+	margin: 10px 5px 0 5px;
+	vertical-align: top;
+  height: 150px;
+}
+
+.og-grid li > a,
+.og-grid li > a img {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
+}
+
+/* end art-grid */
+
 .main.container {
   max-width: 100vw;
 }
@@ -490,3 +517,4 @@ p.dims {
   font-style: italic;
   margin-bottom: 0;
 }
+
