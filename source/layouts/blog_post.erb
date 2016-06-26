@@ -10,10 +10,10 @@
       <footer>
         <div class="page-navigation">
           <% if current_article.previous_article %>
-            <%= link_to("&laquo; #{current_article.previous_article.title}", current_article.previous_article.url, {class: 'prev'}) %>
+            <%= link_to("&laquo; Previous: <i>#{current_article.previous_article.title}</i>", current_article.previous_article.url, {class: 'prev'}) %>
           <% end %>
           <% if current_article.next_article %>
-            <%= link_to("#{current_article.next_article.title} &raquo;", current_article.next_article.url, {class: 'next'}) %>
+            Next: <%= link_to("Next: <i>#{current_article.next_article.title}</i> &raquo;", current_article.next_article.url, {class: 'next'}) %>
           <% end %>
           <hr>
         </div>
