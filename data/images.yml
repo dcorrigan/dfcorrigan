@@ -1,6 +1,10 @@
 ---
 - title: 'Works on Paper'
   works:
+    - num: 17
+      title: Bone Letters
+      description: Paper, walnut and white ink
+      dims: '8.5 x 10.5 inches'
     - num: 65 
       title: Burnt Alphabet (after Johns)
       description: Paper, flame retardant, butane.
