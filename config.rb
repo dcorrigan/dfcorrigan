@@ -53,6 +53,10 @@ ignore 'stylesheets/components/*'
 
 set :summary_length, 2000
 
+activate :syntax
+set :markdown_engine, :kramdown
+set :markdown, fenced_code_blocks: true, smartypants: true
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build

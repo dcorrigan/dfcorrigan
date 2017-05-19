@@ -13,6 +13,7 @@ gem 'middleman', '>= 4.0.0'
 gem 'middleman-sprockets', github: "middleman/middleman-sprockets", branch: "master"
 gem 'middleman-blog'
 gem 'middleman-minify-html'
+gem 'middleman-syntax'
 gem 'image_optim'
 gem 'image_optim_pack'
 gem 'fastimage'
