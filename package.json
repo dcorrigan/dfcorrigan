@@ -1,0 +1,11 @@
+{
+  "name": "dfcorrigan",
+  "version": "1.0.0",
+  "description": "dan corrigan's personal site",
+  "repository": "git@github.com:dcorrigan/dfcorrigan.git",
+  "author": "dcorrigan <df.corrigan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.4.1"
+  }
+}

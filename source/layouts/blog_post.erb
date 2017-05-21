@@ -1,22 +1,26 @@
 <% wrap_layout :standard do %>
-  <div class="blog container">
+  <div class="blog">
     <article class="post">
       <header>
-        <h1 class="title is-1"><%= current_resource.title %></h1>
+        <h1><%= current_resource.title %></h1>
         <p class="byline subtitle"><%= formatted_date %></p>
       </header>
       <%= yield %>
       <hr>
       <footer>
-        <div class="page-navigation">
+        <div class="columns page-navigation">
           <% if current_article.previous_article %>
-            <%= link_to("&laquo; Previous: <i>#{current_article.previous_article.title}</i>", current_article.previous_article.url, {class: 'prev'}) %>
+            <%= link_to("&laquo; Previous: <i>#{current_article.previous_article.title}</i>",
+                        current_article.previous_article.url,
+                        {class: 'prev column is-6'}) %>
           <% end %>
           <% if current_article.next_article %>
-            Next: <%= link_to("Next: <i>#{current_article.next_article.title}</i> &raquo;", current_article.next_article.url, {class: 'next'}) %>
+            <%= link_to("Next: <i>#{current_article.next_article.title}</i> &raquo;",
+                        current_article.next_article.url,
+                        {class: 'next column is-6'}) %>
           <% end %>
-          <hr>
         </div>
+        <hr>
         <div class="block">
           <strong>Share:</strong>
           <a href="https://twitter.com/intent/tweet?text=<%= current_article.title %>&url=http://dfcorrigan.com<%= current_article.url %>"

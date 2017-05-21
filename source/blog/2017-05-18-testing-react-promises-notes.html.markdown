@@ -117,6 +117,7 @@ Wrapping the internals of our test in a promise like this
 ~~~
 
 makes me feel like I accomplished something, but the test still fails. We need the test to _wait_ for the callback to execute. We can do that by letting the callback resolve our new promise.
+{: .continued}
 
 ## Let a Callback Prop Resolve the Test Promise
 

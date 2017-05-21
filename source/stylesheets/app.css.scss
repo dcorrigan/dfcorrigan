@@ -1,5 +1,6 @@
-//= require components/normalize.css
-//= require components/bulma.css
-//= require components/default.css
-//= require components/dancorrigan.css
-//= require components/highlighting.css
+@import 'components/normalize';
+$primary: #0FA0CE;
+@import 'bulma/bulma';
+@import 'components/default';
+@import 'components/dfcorrigan';
+@import 'components/highlighting';

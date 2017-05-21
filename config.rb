@@ -31,6 +31,7 @@ data.images.each do |category|
 end
 
 activate :sprockets
+sprockets.append_path File.join(root, 'node_modules')
 
 ##
 # Blog
@@ -51,7 +52,7 @@ ignore 'stylesheets/components/*'
 
 # General configuration
 
-set :summary_length, 1000
+set :summary_length, 500
 
 activate :syntax
 set :markdown_engine, :kramdown
