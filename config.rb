@@ -60,6 +60,10 @@ set :markdown, fenced_code_blocks: true, smartypants: true
 
 # Build-specific configuration
 configure :build do
+  activate :gzip do |gzip|
+    gzip.exts = %w(.css .htm .html .js .svg .xhtml .json .png .jpeg)
+  end
+
   # Minify CSS on build
   activate :minify_css
 
