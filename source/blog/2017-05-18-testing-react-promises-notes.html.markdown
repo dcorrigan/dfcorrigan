@@ -5,11 +5,9 @@ tags:
   - programming
 ---
 
-Javascript promises broke my brain the first time I encountered them. I've healed a little, but I sometimes get hung up on them in testing. The other day I was writing tests for a component with promise-based blocking behavior: the component allowed users to attach a text file that would be read and parsed by a separate utility function so that the data could be used to automatically populate some form fields. The utility function returned the data as a promise, and then the component sent the data to its parent via a callback. I wanted to test that the callback was being invoked correctly, and it proved painful.
+Javascript promises broke my brain the first time I encountered them. I've healed a little, but I sometimes they still give me trouble in tests. The other day I was writing tests for a component with promise-based blocking behavior: the component allowed users to attach a text file that would be read and parsed by a separate utility function so that the data could be used to automatically populate some form fields. The utility function returned the data as a promise, and then the component sent the data to its parent via a callback. I wanted to test that the callback was being invoked correctly, and it proved painful.
 
-This is a pattern I've seen a couple times: the component is responsible for receiving data at some unknown point in the future and then alerting its parent via a callback.[^1]
-
-I made some sample code to demonstrate the solution I settled on. You can find it [here](https://github.com/dcorrigan/dfcorrigan). My code uses an API call as an example of promise-based blocking behavior.
+This is a pattern I've seen a couple times: the component is responsible for receiving data at some unknown point in the future and then alerting its parent via a callback.[^1] I made some sample code to demonstrate the solution I settled on. You can find it [here](https://github.com/dcorrigan/promise-testing-demo). My sample uses an API call as an example of promise-based blocking behavior.
 
 For starters, here is the component:
 
@@ -57,7 +55,7 @@ export default class RecipeSearch extends React.Component {
 }
 ~~~
 
-It renders a simple form. It tracks user input with its state, and it sends the user search term to an API when the user clicks "Submit." The component will hopefully get a JSON response, and the component then gives that data to its parent via a callback. I'm not including the Api class here, but it's in the linked repo. For the purposes of discussion, just know that it returns a promise with the parsed JSON data from the response.
+It renders a simple form. It tracks user input with its state, and it sends the user search term to an API when the user clicks "Submit." The API call will return a JSON response, and the component then gives that data to its parent via a callback. I'm not including the API class here, but it's in the linked repo. For the purposes of discussion, just know that it returns a promise with the parsed JSON data from the response.
 
 What if we want to test that the callback is fired in the above scenario? A straightforward attempt might look like this:[^2]
 
@@ -99,7 +97,7 @@ describe('RecipeSearch', () => {
 
 We have some sample data (`defaultResponse`), we mock the web request using nock in the `beforeEach` hook, and then we construct a callback function that populates a variable, `fetchedData`. `fetchedData` is declared in the test's scope. When our callback is invoked, `fetchedData` should be assigned the data we're expecting.
 
-This test fails. The test has no way to wait for the API call inside the component's `submit` method to resolve, and so it makes the assertion about the content of `fetchedData` before our callback is invoked. There are two important ideas we need to implement to make the test work.
+This test fails. The test has no way to wait for the API call inside the component's `submit` method to resolve, and so it makes the assertion about the content of `fetchedData` before our callback is invoked. There are two important concepts we need to make the test work.
 
 ## Return a Promise in Mocha Tests of Promise-based Code
 
@@ -151,7 +149,7 @@ The `updateMePlease` function we pass to the component as its `updateParent` pro
   });
 ~~~
 
-The other thing to pay attention to here is variable scope. `component` and `fetchedData` both need to be declared with sufficient scope that both the initial promise and the then method have access to them.
+The other thing to pay attention to here is variable scope. `component` and `fetchedData` both need to be declared with sufficient scope that both the initial promise and the `then` method have access to them.
 
 This really just amounts to message passing. The test needs to know when the callback has been invoked so that it can check the data, so we give the callback a means to tell the test when it's finished. And voilà, a passing test.
 
