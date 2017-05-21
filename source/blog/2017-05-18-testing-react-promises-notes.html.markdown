@@ -5,7 +5,7 @@ tags:
   - programming
 ---
 
-Javascript promises broke my brain the first time I encountered them. I've healed a little, but I sometimes they still give me trouble in tests. The other day I was writing tests for a component with promise-based blocking behavior: the component allowed users to attach a text file that would be read and parsed by a separate utility function so that the data could be used to automatically populate some form fields. The utility function returned the data as a promise, and then the component sent the data to its parent via a callback. I wanted to test that the callback was being invoked correctly, and it proved painful.
+Javascript promises broke my brain the first time I encountered them. I've healed a little, but I sometimes still give me trouble in tests. The other day I was writing tests for a component with promise-based blocking behavior: the component allowed users to attach a text file that would be read and parsed by a separate utility function so that the data could be used to automatically populate some form fields. The utility function returned the data as a promise, and then the component sent the data to its parent via a callback. I wanted to test that the callback was being invoked correctly, and it proved painful.
 
 This is a pattern I've seen a couple times: the component is responsible for receiving data at some unknown point in the future and then alerting its parent via a callback.[^1] I made some sample code to demonstrate the solution I settled on. You can find it [here](https://github.com/dcorrigan/promise-testing-demo). My sample uses an API call as an example of promise-based blocking behavior.
 
@@ -154,5 +154,5 @@ The other thing to pay attention to here is variable scope. `component` and `fet
 This really just amounts to message passing. The test needs to know when the callback has been invoked so that it can check the data, so we give the callback a means to tell the test when it's finished. And voilà, a passing test.
 
 [^1]: If you're using Flux architecture this might never come up because data-fetching activities are handled in the action layer. I sometimes have use for simple components with one or API calls, and its not worth it to me to introduce the added complexity of Flux.
-[^2]: This post assume you have some familiarity with testing React components. For reference, the test uses [mocha](https://mochajs.org/), [chai](http://chaijs.com/), [enzyme](https://github.com/airbnb/enzyme), and [nock](https://github.com/node-nock/nock).
+[^2]: This post assumes you have some familiarity with testing React components. For reference, the test uses [mocha](https://mochajs.org/), [chai](http://chaijs.com/), [enzyme](https://github.com/airbnb/enzyme), and [nock](https://github.com/node-nock/nock).
 [^3]: We could, thanks to enzyme, using `component.instance().submit()`. This would be a more granular unit test. Some might argue this is a better approach, but I like that our current test emulates user behavior and is ignorant of the implementation details of the component.

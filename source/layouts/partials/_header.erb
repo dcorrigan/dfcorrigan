@@ -29,12 +29,15 @@
     </span>
 
     <div id="nav-menu" class="nav-right nav-menu">
-      <a class="nav-item" href="/art/">
-        Art
-      </a>
-      <a class="nav-item" href="/blog/">
-        Blog
-      </a>
+      <% [['Art', '/art/'], ['Blog', '/blog/'], ['Resume', 'resume.html']].each do |text, path| %>
+        <% klass = 'nav-item is-tab' %>
+        <% klass += ' is-active' if active?(path, current_resource.path) %>
+        <%= link_to(
+          text,
+          path,
+          class: klass
+        )%>
+      <% end %>
     </div>
   </div>
 </nav>
