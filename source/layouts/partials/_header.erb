@@ -1,16 +1,40 @@
-<header class="main">
-  <div class="header-name">
-    <h1>
-      <a href="/">
+<nav class="nav">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item" href="/">
+        <%= image_tag 'theme/gray-large.png', alt: 'dfcorrigan avatar' %>
+      </a>
+      <a class="nav-item" href="/">
         Dan Corrigan
       </a>
-    </h1>
-    <%= partial("layouts/ornaments/angled_pointer") %>
+    </div>
+
+    <div class="nav-center">
+      <a class="nav-item">
+        <span class="icon">
+          <i class="fa fa-github"></i>
+        </span>
+      </a>
+      <a class="nav-item">
+        <span class="icon">
+          <i class="fa fa-twitter"></i>
+        </span>
+      </a>
+    </div>
+
+    <span id="nav-toggle" class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+
+    <div id="nav-menu" class="nav-right nav-menu">
+      <a class="nav-item" href="/art/">
+        Art
+      </a>
+      <a class="nav-item" href="/blog/">
+        Blog
+      </a>
+    </div>
   </div>
-  <nav>
-    <ul>
-      <li><a href="/art/">Art</a></li>
-      <li><a href="/blog/">Blog</a></li>
-    </ul>
-  </nav>
-</header>
+</nav>

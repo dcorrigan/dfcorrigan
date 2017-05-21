@@ -3,22 +3,20 @@
   <%= partial("layouts/partials/focus_image") %>
 <% end %>
 <% data.images.each_with_index do |category_info, ind| %>
-  <div class="art-divider">
-    <div class="art-head">
-      <h5><%= category_info.title %></h5>
-      <div class="svg-pointer svg-pointer-right">
-        <%= partial("layouts/ornaments/curly_pointer") %>
+  <div class="container is-fluid">
+    <div class="art-divider">
+      <div class="art-head">
+        <h5><%= category_info.title %></h5>
       </div>
+      <ul class="thumb-grid">
+        <% category_info.works.each do |img| %>
+          <li>
+            <a class="img-thumb" href="<%= art_route(category_info.title, img.title) %>">
+              <img src="<%= art_thumb_for(img.num) %>" />
+            </a>
+          </li>
+        <% end %>
+      </ul>
     </div>
-  </div>
-  <ul class="thumb-grid">
-    <% category_info.works.each do |img| %>
-      <li>
-        <a class="img-thumb" href="<%= art_route(category_info.title, img.title) %>">
-          <img src="<%= art_thumb_for(img.num) %>" />
-        </a>
-      </li>
-    <% end %>
-  </ul>
 <% end %>
 </main>

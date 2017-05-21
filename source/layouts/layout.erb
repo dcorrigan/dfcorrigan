@@ -24,13 +24,12 @@
 
     <!-- JS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <%= javascript_include_tag :app %>
 
   </head>
   <body>
-    <div class="main container">
-      <div class="three columns">
-        <%= partial("layouts/partials/header") %>
-      </div>
+    <%= partial("layouts/partials/header") %>
+    <div class="columns">
       <%= yield %>
     </div>
     <%= partial("layouts/partials/footer") %>

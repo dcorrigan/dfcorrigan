@@ -9,7 +9,6 @@ pageable: true
         <p class="byline-list"> <small> <%= format_date(article) %> </small> </p>
         <h1>
           <% link_to(article.url) do %>
-            <%= partial("layouts/ornaments/doodad") %>
             <%= article.title %>
           <% end %>
         </h1>

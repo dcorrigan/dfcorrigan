@@ -51,7 +51,7 @@ ignore 'stylesheets/components/*'
 
 # General configuration
 
-set :summary_length, 2000
+set :summary_length, 1000
 
 activate :syntax
 set :markdown_engine, :kramdown

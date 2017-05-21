@@ -1,8 +1,8 @@
 <% wrap_layout :layout do %>
-  <div class="center-col six columns">
+  <div class="column is-6 is-offset-3">
     <%= yield %>
   </div>
-  <div class="three columns">
+  <div class="column is-3">
     <% if content_for?(:third_col) %>
       <%= yield_content(:third_col) %>
     <% else %>
